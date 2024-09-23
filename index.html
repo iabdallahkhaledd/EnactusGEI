@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnactusGEI Perfect Committee</title>
+    <link rel="stylesheet" href="Quiz.css">
+    <link rel="icon" href="media/en.png" type="image/icon type">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W0BT0S586R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-W0BT0S586R');
+
+    </script>
+</head>
+
+<body>
+    <div class="wrapper-main">
+
+        <!-- Home Page-->
+        <div id="home" class="flex-column flex-center">
+            <header>
+                <img src="media/Banner.svg" alt="">
+            </header>
+            <div class="main">
+                <h3>Find the right committee in Enactus!</h3>
+                <h4>A committee personality quiz inspired by cosmos persona. What is your perfect committee personality type?</h4>
+                <p><img src="media/Thumbnail.gif" style="max-width: 100%;"></p>
+                <div class="begin-quiz-container">
+                    <button id="begin-quiz">Yalla Beena</button>
+                </div>
+            </div>
+        </div>
+
+        <!--Quiz Pages-->
+        <div class="quiz-page" id="quiz-page" style="display: none;">
+            <div id="quiz" class="justify-center flex-column">
+                <h2 id="question">Question</h2>
+                <div id="choices" class="choices"></div>
+            </div>
+        </div>
+
+        <!--Results Page-->
+        <div id="results" style="display: none;">
+            <div id="result-description"></div>
+            <div class="button-container">
+                <button id="back-to-home">Back Home</button>
+                <button class="register-button" onclick="window.open('https://forms.gle/2ww1AExatkoHy9696', '_blank')">Register Now</button>
+                <button class="share-button">Share Quiz!</button>
+            </div>
+            <footer>
+                <h3>
+                    Join us at Enactus GEI</h3>
+                <br>
+                <a href="https://lnk.bio/enactusgei"><img src="media/follow.png" alt=""></a>
+            </footer>
+        </div>
+    </div>
+    <script src="personalQuiz.js"></script>
+</body>
+
+</html>
