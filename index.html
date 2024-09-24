@@ -11,7 +11,7 @@
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
-            dataLayer.push(arguments);
+            dataLayer.push(arguments);  
         }
         gtag('js', new Date());
         gtag('config', 'G-W0BT0S586R');
@@ -28,11 +28,12 @@
                 <img src="media/Banner.svg" alt="">
             </header>
             <div class="main">
-                <h3>Find the right committee in Enactus!</h3>
-                <h4>A committee personality quiz inspired by cosmos persona. What is your perfect committee personality type?</h4>
+                <h3>اختبار شخصيتك في ايناكتس</h3>
+                <h4>تفتكر لو دخلت ايناكتس ايه اكتر كوميتي هيكون مناسب ليك ؟</h4>
                 <p><img src="media/Thumbnail.gif" style="max-width: 100%;"></p>
                 <div class="begin-quiz-container">
-                    <button id="begin-quiz">Yalla Beena</button>
+                   <img src="media/yala.png" alt="">
+                    <button id="begin-quiz">يالا بينا</button>
                 </div>
             </div>
         </div>
@@ -47,21 +48,30 @@
 
         <!--Results Page-->
         <div id="results" style="display: none;">
-            <div id="result-description"></div>
+            
             <div class="button-container">
-                <button id="back-to-home">Back Home</button>
-                <button class="register-button" onclick="window.open('https://forms.gle/2ww1AExatkoHy9696', '_blank')">Register Now</button>
-                <button class="share-button">Share Quiz!</button>
+                <button id="back-to-home" onclick="location.reload();">عيد الاختبار</button>
+                <button class="register-button" onclick="window.open('https://forms.gle/2ww1AExatkoHy9696', '_blank')">! املى الفورم</button>
+                <button class="share-button" onclick="copyLink()">شير مع صحابك</button>
             </div>
+            <div id="result-description"></div>
             <footer>
-                <h3>
-                    Join us at Enactus GEI</h3>
-                <br>
+            <br>
                 <a href="https://lnk.bio/enactusgei"><img src="media/follow.png" alt=""></a>
             </footer>
         </div>
     </div>
     <script src="personalQuiz.js"></script>
+    <script>
+    function copyLink() {
+        const url = window.location.href;
+        navigator.clipboard.writeText(url).then(() => {
+            alert('Link copied to clipboard!');
+        }).catch(err => {
+            console.error('Error copying link: ', err);
+        });
+    }
+</script>
 </body>
 
 </html>
