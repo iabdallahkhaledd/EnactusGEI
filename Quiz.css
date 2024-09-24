@@ -114,6 +114,10 @@ header img {
     /* Vertically center the button */
 }
 
+.begin-quiz-container img{
+    width: 10%;
+}
+
 #begin-quiz {
     font-size: 1.8rem;
     font-weight: 600;
@@ -404,5 +408,8 @@ header img {
         align-items: center;
     }
 
-
+.begin-quiz-container img{
+    width: 30%;
+}
+    
 }
