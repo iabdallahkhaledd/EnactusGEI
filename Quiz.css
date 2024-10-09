@@ -325,8 +325,8 @@ header img {
 
     #begin-quiz:hover {
         cursor: pointer;
-        background-color: #FFCD64;
-        color: #fbfbfb;
+        background-color: #FFD989;
+        color: #3B2921;
         transform: none;
         transition: none;
     }
@@ -367,8 +367,8 @@ header img {
 
     .choices:hover {
         cursor: pointer;
-        background-color: #FFCD64;
-        color: #fbfbfb;
+        background-color: #FFD989;
+        color: #3B2921;
         transform: none;
         transition: none;
     }
