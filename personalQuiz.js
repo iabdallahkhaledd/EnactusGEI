@@ -15,51 +15,10 @@ function displayQuiz() {
                 },
         ]
     },
-        {
-            question: "لما تضيع حاجة، بتعمل إيه؟",
-            choices: ["أرجع أفتش في كل مكان", "أستنى يمكن حد يلاقيها!"],
-            weights: [
-                {
-                    pmScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    pmScore: 0
-                },
-        ]
-    },
+        
         {
             question: "الضغط في الشغل بيخليك تبطل شرب شاي ولا بتكمل",
             choices: ["أبطل شرب شاي عشان اركز!", "بكمل شاي عشان أشتغل وانا رايق!"],
-            weights: [
-                {
-                    pmScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    pmScore: 0
-                },
-        ]
-    },
-        {
-            question: "لما تلاقي مشكلة، بتفكر في الحل ولا بتقعد تصيح'؟",
-            choices: ["أبدأ أفكر وأحلها", "أعيط شوية وبعدين أفكر!"],
-            weights: [
-                {
-                    pmScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    pmScore: 0
-                },
-        ]
-    },
-        {
-            question: "الديدلاينز بالنسبة لك، حاجات مفروضة ولا مجرد اقتراحات؟",
-            choices: ["مواعيد نهائية، مينفعش!", "ممكن نمدها شوية؟"],
             weights: [
                 {
                     pmScore: +3,
@@ -115,35 +74,6 @@ function displayQuiz() {
                 },
         ]
     },
-        {
-            question: "تفضل تكون في حتة مليانة دوشة ولا في حتة هادية؟",
-            choices: ["دوشة حب الحياة!", "هادية، بحب أركز!"],
-            weights: [
-                {
-                    prfrScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    prfrScore: 0
-                },
-        ]
-    },
-        {
-            question: "لما حد يعزمك على أكلة، هل تحب تسأل عن المكونات ولا تأكل من غير ما تسأل؟",
-            choices: ["أسأل، عاوز أكون مطمن", "أكل وأشوف بعدين!"],
-            weights: [
-                {
-                    prfrScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    prfrScore: 0
-                },
-        ]
-    },
-
     // HR
         {
             question: "لما تنظم فريق، بتحب تكون 'الشخص المسؤول' ولا 'الشخص اللطيف'؟",
@@ -176,34 +106,6 @@ function displayQuiz() {
         {
             question: "لما يجيلك خبر حلو، بتحب تشارك الكل ولا تحتفظ بيه لنفسك؟",
             choices: ["أشارك، ليه لأ؟", "أقول 'دا سرا!'"],
-            weights: [
-                {
-                    hrScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    hrScore: 0
-                },
-        ]
-    },
-        {
-            question: "لما تلاقي حد متميز، هل تحسده ولا تشجعه؟",
-            choices: ["أشجعه، المحبة!", "أحسده شوية!"],
-            weights: [
-                {
-                    hrScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    hrScore: 0
-                },
-        ]
-    },
-        {
-            question: "في الاجتماعات، بتحب تكون المتحدث ولا المستمع؟",
-            choices: ["المتحدث، بقول كل حاجة!", "المستمع، أراقب وأتعلم!"],
             weights: [
                 {
                     hrScore: +3,
@@ -259,35 +161,6 @@ function displayQuiz() {
                 },
         ]
     },
-        {
-            question: "في مجموعة، هل تحب تكون المخرج ولا البطل؟",
-            choices: ["المخرج، أنا صاحب الرؤية!", "البطل، الكل يشوفني!"],
-            weights: [
-                {
-                    multimediaScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    multimediaScore: 0
-                },
-        ]
-    },
-        {
-            question: "لما تكون مشغول، تحب تعمل إيه؟ تشغل موسيقى ولا تشوف فيديوهات مضحكة؟",
-            choices: ["موسيقى، لرفع المعنويات", "فيديوهات، الضحك هو الحل!"],
-            weights: [
-                {
-                    multimediaScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    multimediaScore: 0
-                },
-        ]
-    },
-
     // Operations
         {
             question: "لما يكون في مشكلة في الشغل، تحب تحلها لوحدك ولا تطلب مساعدة؟",
@@ -331,34 +204,6 @@ function displayQuiz() {
                 },
         ]
     },
-        {
-            question: "لما تنجز شغل، بتحب تحس بإنجازك ولا تكمل بسرعة لللي بعده؟",
-            choices: ["أحب أحتفل بإنجازي", "أكمل بسرعة، مش فاضي!"],
-            weights: [
-                {
-                    opsScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    opsScore: 0
-                },
-        ]
-    },
-        {
-            question: "في الشغل، هل تحب تكون هجومي ولا دفاعي؟",
-            choices: ["هجوم، لازم أتحرك!", "دفاع، أراقب كل حاجة!"],
-            weights: [
-                {
-                    opsScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    opsScore: 0
-                },
-        ]
-    },
 
         // Presentation
         {
@@ -378,34 +223,6 @@ function displayQuiz() {
         {
             question: "لما حد يسألك سؤال محرج في العرض، بتقول إيه؟",
             choices: ["نرجع لموضوعنا", "دا سؤال صعب، محتاج وقت أفكر!"],
-            weights: [
-                {
-                    presentationScore: +3,
-                    otherScore: 0
-                }, // Presentation
-                {
-                    otherScore: +3,
-                    presentationScore: 0
-                }, // Others
-        ]
-    },
-        {
-            question: "لما تحضر عرض لحد، بتحب تاكل تسالي ولا تركز في الكلام؟",
-            choices: ["أركز جامد", "أركز بس، مع شوية تسالي!"],
-            weights: [
-                {
-                    presentationScore: +3,
-                    otherScore: 0
-                }, // Presentation
-                {
-                    otherScore: +3,
-                    presentationScore: 0
-                }, // Others
-        ]
-    },
-        {
-            question: "لما تحتاج تستخدم باوربوينت، بتحب القوالب الجاهزة ولا تعمل تصميم جديد؟",
-            choices: ["قوالب جاهزة، سهلة وسريعة", "تصميم جديد، أريد أن أكون مميز!"],
             weights: [
                 {
                     presentationScore: +3,
