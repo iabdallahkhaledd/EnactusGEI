@@ -1,340 +1,476 @@
 function displayQuiz() {
-    const questions = [
+  const questions = [
     // Project Management (PM)
+    {
+      question: "لما بتلاقي حاجه بايظة في البيت",
+      choices: ["بتطلع الشخص الفزلوكة اللي جواك", "بتجيب حد بيفهم فيها وخلاص"],
+      weights: [
         {
-            question: "لما تيجي تكلم صحابك عن مشروع، بتحب تخطط قبلها ولا تطلع منهم أفكار في السريع؟",
-            choices: ["أخطط وأكتب كل حاجة", "أقولهم يلا مفيش وقت!'"],
-            weights: [
-                {
-                    pmScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    pmScore: 0
-                },
-        ]
+          pmScore: +3,
+          otherScore: 0,
+        },
+        {
+          otherScore: +3,
+          pmScore: 0,
+        },
+      ],
     },
-        
+
+    {
+      question: "لو فيه فيلم نزل جديد وانت عايز تتفرج عليه",
+      choices: ["بتسيرش عليه ف كذا حاجه", "بتستني اما يبقي متاح عادي"],
+      weights: [
         {
-            question: "الضغط في الشغل بيخليك تبطل شرب شاي ولا بتكمل",
-            choices: ["أبطل شرب شاي عشان اركز!", "بكمل شاي عشان أشتغل وانا رايق!"],
-            weights: [
-                {
-                    pmScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    pmScore: 0
-                },
-        ]
+          pmScore: +3,
+          otherScore: 0,
+        },
+        {
+          otherScore: +3,
+          pmScore: 0,
+        },
+      ],
     },
 
     // PR & FR
+    {
+      question: "لو حاجه عجبتك جداً بس سعرها طلع غالي عليك",
+      choices: ["بتحاول تقلل في السعر", "بتوافق وتدفع كل اللي معاك"],
+      weights: [
         {
-            question: "لما تحضر مناسبة، بتحب تبقى في الصورة ولا تفضل في الظل؟",
-            choices: ["أكون في الصورة", "بتحول باتمان'"],
-            weights: [
-                {
-                    prfrScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    prfrScore: 0
-                },
-        ]
-    },
+          prfrScore: +3,
+          otherScore: 0,
+        },
         {
-            question: "لما تتخذ قرار، تعتمد على العقل ولا بتستخدم احساسك؟",
-            choices: ["أفكر كويس، مش عايز أندم", "قلبي دليلي!'"],
-            weights: [
-                {
-                    prfrScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    prfrScore: 0
-                },
-        ]
+          otherScore: +3,
+          prfrScore: 0,
+        },
+      ],
     },
+    {
+      question: "شايف أنك لو في أعماق البحر مع سبونج بوب هتتقمص شخصية",
+      choices: ["مستر سلطع عشان بحب الفلوس", "شفيق عشان متوحد"],
+      weights: [
         {
-            question: "لما متعرفش تفتح مواضيع، تروح لأصحابك ولا تحاول تحلها بنفسك؟",
-            choices: ["أستشيرهم، هما هيساعدوني", "لوحدي وأقول 'يا رب، سهلها!'"],
-            weights: [
-                {
-                    prfrScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    prfrScore: 0
-                },
-        ]
+          prfrScore: +3,
+          otherScore: 0,
+        },
+        {
+          otherScore: +3,
+          prfrScore: 0,
+        },
+      ],
     },
+
     // HR
+    {
+      question: "لو فيه مشكله بين اتنين اصحابك بتحب",
+      choices: ["انك تسمع وتحل", "مش مهم كده كده هيتصالحوا"],
+      weights: [
         {
-            question: "لما تنظم فريق، بتحب تكون 'الشخص المسؤول' ولا 'الشخص اللطيف'؟",
-            choices: ["المسؤول، لازم كده", "اللطيف، الكل بيحبني!"],
-            weights: [
-                {
-                    hrScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    hrScore: 0
-                },
-        ]
+          hrScore: +3,
+          otherScore: 0,
+        },
+        {
+          otherScore: +3,
+          hrScore: 0,
+        },
+      ],
     },
+    {
+      question: "لو عندك القدرة على مساعدة الناس بتساعدهم ازاي ؟",
+      choices: [
+        "بتعرض المساعدة على اللي محتاجها عشان أدخل الجنة",
+        "لاء أنا كاريزما ومش بساعد حد",
+      ],
+      weights: [
         {
-            question: "لما حد يضايقك، ترد بهدوء ولا تحس إنك في فيلم أكشن؟",
-            choices: ["أهدأ وأكمل", "أدرينالين و أكشن!'"],
-            weights: [
-                {
-                    hrScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    hrScore: 0
-                },
-        ]
-    },
+          hrScore: +3,
+          otherScore: 0,
+        },
         {
-            question: "لما يجيلك خبر حلو، بتحب تشارك الكل ولا تحتفظ بيه لنفسك؟",
-            choices: ["أشارك، ليه لأ؟", "أقول 'دا سرا!'"],
-            weights: [
-                {
-                    hrScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    hrScore: 0
-                },
-        ]
+          otherScore: +3,
+          hrScore: 0,
+        },
+      ],
     },
 
     // Multimedia
+    {
+      question: "لما بتيجي تتصور",
+      choices: [
+        "بتعذب صاحبك وبتركز في تفاصيل الصورة وممكن يصورك 100 صورة",
+        "لاء ، صور واجري",
+      ],
+      weights: [
         {
-            question: "لما تكون في مشروع فني، بتفضل تكون كاتب ولا مصور؟",
-            choices: ["كاتب، الكلمة سلاح!", "مصور، صورة بألف كلمة!"],
-            weights: [
-                {
-                    multimediaScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    multimediaScore: 0
-                },
-        ]
+          multimediaScore: +3,
+          otherScore: 0,
+        },
+        {
+          otherScore: +3,
+          multimediaScore: 0,
+        },
+      ],
     },
+    {
+      question: "لو صاحبك منزل صورة",
+      choices: ["بتركز ف كواليتي الصوره والزاويه بتاعتها", "ولا اي صوره عادي"],
+      weights: [
         {
-            question: "لما تتفرج على فيلم، بتحلل القصة ولا تأكل فشار وتستمتع؟",
-            choices: ["أحلل كل حاجة", "آكل فشار وأشوف!"],
-            weights: [
-                {
-                    multimediaScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    multimediaScore: 0
-                },
-        ]
+          multimediaScore: +3,
+          otherScore: 0,
+        },
+        {
+          otherScore: +3,
+          multimediaScore: 0,
+        },
+      ],
     },
+
+    //Marketing
+    {
+      question: "لو هتنزل صورة ليك بتحب",
+      choices: ["يكون عليها كابشن لذيذ وكريتيف", "بتحط قلوب وتنزلها"],
+      weights: [
         {
-            question: "لما تصمم حاجة، هل تحب أن تكون مبدع ولا تمشي على النمط التقليدي؟",
-            choices: ["مبدع، بحب التجديد!", "تقليدي، في الأمان!"],
-            weights: [
-                {
-                    multimediaScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    multimediaScore: 0
-                },
-        ]
+          marketingScore: +3,
+          otherScore: 0,
+        },
+        {
+          otherScore: +3,
+          marketingScore: 0,
+        },
+      ],
+    },
+    {
+      question: "لو هتختار تكون شخصية من كرتون الفار الطباخ هتكون",
+      choices: [
+        "الفار عشان بيحب يبدع في الوصفة",
+        "چوليت عشان بتحب تتحكم وتسيطر على الأمور",
+      ],
+      weights: [
+        {
+          marketingScore: +3,
+          otherScore: 0,
+        },
+        {
+          otherScore: +3,
+          marketingScore: 0,
+        },
+      ],
     },
     // Operations
+    {
+      question: "لما بتلعب سكرو مع صحابك وتخسر",
+      choices: ["بتتعصب وتعيد الجيم تاني", "it's just a game"],
+      weights: [
         {
-            question: "لما يكون في مشكلة في الشغل، تحب تحلها لوحدك ولا تطلب مساعدة؟",
-            choices: ["أحلها لوحدي، عايز أكون بطل!", "أطلب مساعدة، أحسن!"],
-            weights: [
-                {
-                    opsScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    opsScore: 0
-                },
-        ]
+          opsScore: +3,
+          otherScore: 0,
+        },
+        {
+          otherScore: +3,
+          opsScore: 0,
+        },
+      ],
     },
+    {
+      question: "لما تلاقي خطة مش ناجحة، هل بتخطط تاني ولا بتسيبها وتمشي؟",
+      choices: ["أرجع أعيدها تاني", "أسيبها، عادي"],
+      weights: [
         {
-            question: "لما تلاقي خطة مش ناجحة، هل ترجع تخطط من جديد ولا تسيبها وتمشي؟",
-            choices: ["أرجع أعيدها تاني", "أسيبها، عادي"],
-            weights: [
-                {
-                    opsScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    opsScore: 0
-                },
-        ]
-    },
+          opsScore: +3,
+          otherScore: 0,
+        },
         {
-            question: "لما تتعامل مع مواعيد، هل تحب كل حاجة تكون منظمة ولا تمشي على مزاجك؟",
-            choices: ["كل حاجة منظمة، عايز النظام!", "أحب أكون مرن، الحياة مفاجآت!"],
-            weights: [
-                {
-                    opsScore: +3,
-                    otherScore: 0
-                },
-                {
-                    otherScore: +3,
-                    opsScore: 0
-                },
-        ]
+          otherScore: +3,
+          opsScore: 0,
+        },
+      ],
     },
 
-        // Presentation
+    // Presentation
+    {
+      question: "لو عندك برزنتيشن في الجامعة",
+      choices: [
+        "تحب تكون المنقذ وتساعد أي حد من صحابك لما يتلغبط",
+        "Thank You اقرا سلايد",
+      ],
+      weights: [
         {
-            question: "لما تقدم عرض، بتحب تقرأ من ورقة ولا تتكلم بحرية؟",
-            choices: ["أقرأ، عايز أكون دقيق", "أتحرك وأعمل دراما!"],
-            weights: [
-                {
-                    presentationScore: +3,
-                    otherScore: 0
-                }, // Presentation
-                {
-                    otherScore: +3,
-                    presentationScore: 0
-                }, // Others
-        ]
+          presentationScore: +3,
+          otherScore: 0,
+        }, // Presentation
+        {
+          otherScore: +3,
+          presentationScore: 0,
+        }, // Others
+      ],
     },
+
+    {
+      question: "تقدر تقيم مستواك في الانجليزي أنه",
+      choices: ["زي چوني في الكبير أوي", "I'm speaking English fifty fifty"],
+      weights: [
         {
-            question: "لما حد يسألك سؤال محرج في العرض، بتقول إيه؟",
-            choices: ["نرجع لموضوعنا", "دا سؤال صعب، محتاج وقت أفكر!"],
-            weights: [
-                {
-                    presentationScore: +3,
-                    otherScore: 0
-                }, // Presentation
-                {
-                    otherScore: +3,
-                    presentationScore: 0
-                }, // Others
-        ]
+          presentationScore: +3,
+          otherScore: 0,
+        }, // Presentation
+        {
+          otherScore: +3,
+          presentationScore: 0,
+        }, // Others
+      ],
     },
-        {
-            question: "لو العرض في مكان غريب، هل تحب تتأقلم بسرعة ولا تحس أن الدنيا قلبت عليك؟",
-            choices: ["أتعامل مع الوضع", "دا مش مكاني، أنا عايز أروح!"],
-            weights: [
-                {
-                    presentationScore: +3,
-                    otherScore: 0
-                }, // Presentation
-                {
-                    otherScore: +3,
-                    presentationScore: 0
-                }, // Others
-        ]
-    }
-];
+  ];
 
-    // Variables for scores 
-    let currentQuestionIndex = 0;
-    let pmScore = 0;
-    let prfrScore = 0;
-    let hrScore = 0;
-    let multimediaScore = 0;
-    let opsScore = 0;
-    let presentationScore = 0;
+  // Variables for scores
+  let currentQuestionIndex = 0;
+  let pmScore = 0;
+  let prfrScore = 0;
+  let hrScore = 0;
+  let multimediaScore = 0;
+  let marketingScore = 0;
+  let opsScore = 0;
+  let presentationScore = 0;
+  function displayQuestionImage(questionIndex) {
+    const imageURLs = [
+      "Q1.jpg",
+      "Q2.jpg",
+      "Q3.jpg",
+      "Q4.jpg",
+      "Q5.jpg",
+      "Q6.jpg",
+      "Q7.jpeg",
+      "Q8.png",
+      "Q9.jpeg",
+      "Q10.gif",
+      "Q11.jpeg",
+      "Q12.gif",
+      "Q13.jpeg",
+      "Q14.jpg",
+    ];
+    const questionImageElement = document.getElementById("question-image");
+    questionImageElement.src = imageURLs[questionIndex];
+  }
 
-    document.getElementById('begin-quiz').addEventListener('click', function () {
-        document.getElementById('home').style.display = 'none';
-        document.getElementById('quiz-page').style.display = 'block';
-        displayCurrentQuestion(); // Show the first question
+  document.getElementById("begin-quiz").addEventListener("click", function () {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("quiz-page").style.display = "block";
+    displayCurrentQuestion(); // Show the first question
+  });
+
+  //Function to display the current question and choices
+  function displayCurrentQuestion() {
+    const currentQuestion = questions[currentQuestionIndex];
+    const questionElement = document.getElementById("question");
+    const progressImageElement = document.getElementById(
+      "question-progress-image"
+    );
+    const choiceContainers = document.getElementById("choices");
+
+    choiceContainers.innerHTML = "";
+
+    questionElement.textContent = currentQuestion.question;
+    progressImageElement.src = getQuestionProgressImage(currentQuestionIndex);
+
+    displayQuestionImage(currentQuestionIndex);
+
+    currentQuestion.choices.forEach((choice, index) => {
+      //Buttons for choices
+      const button = document.createElement("button");
+      button.textContent = choice;
+      button.classList.add("choices");
+      button.addEventListener("click", () => handleChoiceClick(index));
+      choiceContainers.appendChild(button);
     });
+  }
 
-    function displayCurrentQuestion() {
-        const currentQuestion = questions[currentQuestionIndex];
-        const questionElement = document.getElementById('question');
-        const choiceContainers = document.getElementById('choices');
+  function getQuestionProgressImage(questionIndex) {
+    const progressImageURLs = [
+      "Q1 progress.svg",
+      "Q2 progress.svg",
+      "Q3 progress.svg",
+      "Q4 progress.svg",
+      "Q5 progress.svg",
+      "Q6 progress.svg",
+      "Q7 progress.svg",
+      "Q8 progress.svg",
+      "Q9 progress.svg",
+      "Q10 progress.svg",
+      "Q11 progress.svg",
+      "Q12 progress.svg",
+      "Q13 progress.svg",
+      "Q14 progress.svg",
+    ];
+    return progressImageURLs[questionIndex] || "";
+  }
 
-        choiceContainers.innerHTML = '';
-        questionElement.textContent = currentQuestion.question;
+  function handleChoiceClick(choiceIndex) {
+    console.log("Current Question Index:", currentQuestionIndex); // Log the index
+    const currentQuestion = questions[currentQuestionIndex];
 
-        currentQuestion.choices.forEach((choice, index) => {
-            const button = document.createElement('button');
-            button.textContent = choice;
-            button.classList.add('choices');
-            button.addEventListener('click', () => handleChoiceClick(index));
-            choiceContainers.appendChild(button);
+    if (!currentQuestion) {
+      console.error("No question found for index:", currentQuestionIndex);
+      return; // Exit if the question is undefined
+    }
+
+    const selectedChoiceWeight = currentQuestion.weights[choiceIndex];
+
+    // Ensure selectedChoiceWeight is valid
+    if (!selectedChoiceWeight) {
+      console.error("No weights found for choice index:", choiceIndex);
+      return; // Exit if the weights are undefined
+    }
+
+    pmScore += selectedChoiceWeight.pmScore || 0;
+    prfrScore += selectedChoiceWeight.prfrScore || 0;
+    hrScore += selectedChoiceWeight.hrScore || 0;
+    multimediaScore += selectedChoiceWeight.multimediaScore || 0;
+    marketingScore += selectedChoiceWeight.marketingScore || 0;
+    opsScore += selectedChoiceWeight.opsScore || 0;
+    presentationScore += selectedChoiceWeight.presentationScore || 0;
+
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < questions.length) {
+      displayCurrentQuestion();
+    } else {
+      calculateMBTITypeAndDisplayImage();
+    }
+  }
+
+  function calculateMBTITypeAndDisplayImage() {
+    const scores = {
+      PM: pmScore,
+      PR_FR: prfrScore,
+      HR: hrScore,
+      Multimedia: multimediaScore,
+      Marketing: marketingScore,
+      Operations: opsScore,
+      Presentation: presentationScore,
+    };
+
+    // حساب الـ mbtiTypeString بناءً على الدرجات
+    const mbtiTypeString = getMBTIType(scores);
+
+    console.log("MBTI Type:", mbtiTypeString);
+      
+  document.getElementById("quiz-page").style.display = "none";
+      
+    // تحديد الصورة بناءً على mbtiTypeString
+    displayImage(mbtiTypeString);
+
+    document.getElementById("results").style.display = "block";
+  }
+
+  // دالة حساب الـ MBTI Type بناءً على أعلى درجة
+  function getMBTIType(scores) {
+    let maxScore = 0;
+    let mbtiType = "";
+
+    for (const committee in scores) {
+      if (scores[committee] > maxScore) {
+        maxScore = scores[committee];
+        mbtiType = committee;
+      }
+    }
+    return mbtiType;
+
+    document.getElementById("results").style.display = "none";
+    // Determine which committee has the highest score
+    const questionElement = document.getElementById("question");
+    const choiceContainers = document.getElementById("choices");
+    const quizContainer = document.getElementById("quiz");
+    const thumbnailImage = document.querySelector('img[src="Thumbnail.gif"]');
+    questionElement.remove();
+    choiceContainers.remove();
+    quizContainer.remove();
+    thumbnailImage.remove();
+
+    displayImage(mbtiTypeString);
+
+    document.getElementById("results").style.display = "block";
+  }
+
+  //Function to calculate MBTI type and return image URL
+  function getMBTIImageUrl(mbtiTypeString) {
+    const MBTIImageUrls = {
+      PM: "PM.png",
+      PR_FR: "PR.png",
+      HR: "HR.png",
+      Multimedia: "media.png",
+      Marketing: "marketing.png",
+      Operations: "operations.png",
+      Presentation: "presentation.png",
+    };
+    return MBTIImageUrls[mbtiTypeString] || "";
+  }
+
+  //Display image
+  function displayImage(mbtiTypeString) {
+    const imageURL = getMBTIImageUrl(mbtiTypeString);
+    const mbtiImageContainer = document.getElementById("mbti-image");
+    const imageElement = document.createElement("img");
+    imageElement.src = imageURL;
+
+    mbtiImageContainer.appendChild(imageElement);
+  }
+  //Display the first question when the quiz starts
+  displayCurrentQuestion();
+  document.addEventListener("DOMContentLoaded", () => {
+    const choiceContainers = document.querySelectorAll(".choice-container");
+    choiceContainers.forEach((container) => {
+      const choices = container.querySelectorAll("button");
+      choices.forEach((choice, choiceIndex) => {
+        choice.addEventListener("click", () => {
+          handleChoiceClick(choiceIndex);
         });
-    }
-
-    function handleChoiceClick(choiceIndex) {
-        const currentQuestion = questions[currentQuestionIndex];
-        const selectedChoiceWeight = currentQuestion.weights[choiceIndex];
-
-        pmScore += selectedChoiceWeight.pmScore || 0;
-        prfrScore += selectedChoiceWeight.prfrScore || 0;
-        hrScore += selectedChoiceWeight.hrScore || 0;
-        multimediaScore += selectedChoiceWeight.multimediaScore || 0;
-        opsScore += selectedChoiceWeight.opsScore || 0;
-        presentationScore += selectedChoiceWeight.presentationScore || 0;
-
-        currentQuestionIndex++;
-
-        if (currentQuestionIndex < questions.length) {
-            displayCurrentQuestion();
-        } else {
-            calculateResultAndDisplayMessage();
-        }
-    }
-
-    function calculateResultAndDisplayMessage() {
-        const scores = {
-            PM: pmScore,
-            PR_FR: prfrScore,
-            HR: hrScore,
-            Multimedia: multimediaScore,
-            Operations: opsScore,
-            Presentation: presentationScore
-        };
-
-        const bestCommittee = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
-        displayMessage(bestCommittee);
-        document.getElementById('quiz-page').style.display = 'none';
-        document.getElementById('results').style.display = 'block';
-    }
-
-    function displayMessage(committee) {
-        const messages = {
-            PM: "You're a natural planner! Your organizational skills make you perfect for Project Management.",
-            PR_FR: "You're a people person! Your empathy and communication skills are ideal for PR & Fundraising.",
-            HR: "You're great at understanding people! Your interpersonal skills shine in Human Resources.",
-            Multimedia: "You're creative and innovative! Your artistic flair makes you a perfect fit for Multimedia.",
-            Operations: "You're efficient and systematic! Your problem-solving skills make you a star in Operations.",
-            Presentation: "You're a confident speaker! Your presentation skills are perfect for the Presentation committee."
-        };
-
-        const resultDescription = document.getElementById('result-description');
-        resultDescription.textContent = messages[committee];
-    }
-
-    // Initialize the quiz by displaying the first question
-    displayCurrentQuestion();
+      });
+    });
+  });
 }
 
-// Start the quiz when the document is loaded
-document.addEventListener('DOMContentLoaded', displayQuiz);
+//Call function to start the quiz
+displayQuiz();
+
+// Share quiz button click event handler
+document.addEventListener("DOMContentLoaded", function () {
+  const shareButton = document.querySelector(".share-button");
+
+  shareButton.addEventListener("click", function () {
+    const url = window.location.href;
+
+    navigator.clipboard
+      .writeText(url)
+      .then(() => {
+        alert("Quiz URL copied to clipboard!");
+      })
+      .catch((err) => {
+        console.error("Failed to copy URL: ", err);
+      });
+  });
+});
+
+// Select the button element
+const backToHomeButton = document.getElementById("back-to-home");
+
+// Add event listener for the button click
+document.addEventListener("DOMContentLoaded", function () {
+  const backButton = document.getElementById("back-to-home");
+
+  backButton.addEventListener("click", function () {
+    // Redirect to the home page or perform any other action you want
+    window.location.href = "https://gudetea.github.io/FruitCard-Odyssey/"; // Replace 'home.html' with the actual URL of your home page
+  });
+});
+
+// Function to navigate back to the home page
+function navigateToHomePage() {
+  // Reset quiz state if needed
+  resetQuiz(); // Assuming you have a resetQuiz() function defined
+
+  // Hide quiz page and show the home page
+  document.getElementById("home").style.display = "block";
+  document.getElementById("quiz-page").style.display = "none";
+}

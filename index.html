@@ -11,7 +11,7 @@
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
-            dataLayer.push(arguments);  
+            dataLayer.push(arguments);
         }
         gtag('js', new Date());
         gtag('config', 'G-W0BT0S586R');
@@ -32,7 +32,7 @@
                 <h4>تفتكر لو دخلت ايناكتس ايه اكتر كوميتي هيكون مناسب ليك ؟</h4>
                 <p><img src="media/Thumbnail.gif" style="max-width: 100%;"></p>
                 <div class="begin-quiz-container">
-                   <img src="media/yala.png" alt="">
+                    <img src="media/yala.png" alt="">
                     <button id="begin-quiz">يالا بينا</button>
                 </div>
             </div>
@@ -41,37 +41,44 @@
         <!--Quiz Pages-->
         <div class="quiz-page" id="quiz-page" style="display: none;">
             <div id="quiz" class="justify-center flex-column">
+                <img id="question-progress-image" src="">
+                <img id="question-image" src="">
                 <h2 id="question">Question</h2>
                 <div id="choices" class="choices"></div>
             </div>
         </div>
 
         <!--Results Page-->
-        <div id="results" style="display: none;">
-            
+       <div class="Resultss" id="results" style="display: none;">
+            <h1>Your Perfect Committee is..</h1>
+            <div id="mbti-image">
+                
+            </div>  
+            <div>
+                <p2>Hold to save image!</p2>
+            </div>  
             <div class="button-container">
-                <button id="back-to-home" onclick="location.reload();">اعادة الاختبار</button>
-                <button class="register-button" onclick="window.open('https://forms.gle/x78Ff3sDuKcHpuEv8', '_blank')">! املى الفورم</button>
-                <button class="share-button" onclick="copyLink()">شير اللينك</button>
+                <button class="share-button">Share Quiz</button>
+                <a href="https://forms.gle/x78Ff3sDuKcHpuEv8" target="_blank" style="text-decoration: none;"><button id="register-button">Fill the Form</button></a>
             </div>
-            <div id="result-description"></div>
             <footer>
-            <br>
+                <br>
                 <a href="https://lnk.bio/enactusgei" target="_blank"><img src="media/follow.png" alt=""></a>
             </footer>
         </div>
     </div>
     <script src="personalQuiz.js"></script>
     <script>
-    function copyLink() {
-        const url = window.location.href;
-        navigator.clipboard.writeText(url).then(() => {
-            alert('Link copied to clipboard!');
-        }).catch(err => {
-            console.error('Error copying link: ', err);
-        });
-    }
-</script>
+        function copyLink() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                alert('Link copied to clipboard!');
+            }).catch(err => {
+                console.error('Error copying link: ', err);
+            });
+        }
+
+    </script>
 </body>
 
 </html>
