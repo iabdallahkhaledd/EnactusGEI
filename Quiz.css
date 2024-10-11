@@ -197,7 +197,7 @@ header img {
     width: 450px;
     margin-top: -25px;
     margin-bottom: 25px;
-    broder-radius: 5%;
+    border-radius: 5%;
 }
 
 #mbti-image {
@@ -462,7 +462,7 @@ header img {
         height: auto;
         width: 200px;
         margin-top: -20px;
-        broder-radius: 5%;
+        border-radius: 5%;
     }
   #mbti-image img{
         max-width: 100%;
