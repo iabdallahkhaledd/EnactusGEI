@@ -349,7 +349,6 @@ function displayQuiz() {
       Marketing: marketingScore,
       Operations: opsScore,
       Presentation: presentationScore,
-      Mbti: mbti-image,
     };
 
     // حساب الـ mbtiTypeString بناءً على الدرجات
@@ -404,7 +403,6 @@ function displayQuiz() {
       Marketing: "marketing.png",
       Operations: "operations.png",
       Presentation: "presentation.png",
-      Mbti: "PM.png",
     };
     return MBTIImageUrls[mbtiTypeString] || "";
   }
