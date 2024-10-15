@@ -403,6 +403,7 @@ function displayQuiz() {
       Marketing: "marketing.png",
       Operations: "operations.png",
       Presentation: "presentation.png",
+      mbti-image:"PM.png",
     };
     return MBTIImageUrls[mbtiTypeString] || "";
   }
