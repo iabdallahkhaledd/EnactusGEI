@@ -400,7 +400,7 @@ function displayQuiz() {
       PR_FR: "PR.png",
       HR: "HR.png",
       Multimedia: "media.png",
-      Marketing: "Marketing.png",
+      Marketing: "marketing.png",
       Operations: "operations.png",
       Presentation: "presentation.png",
     };
