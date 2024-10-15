@@ -404,7 +404,7 @@ function displayQuiz() {
       Operations: "operations.png",
       Presentation: "presentation.png",
     };
-    return MBTIImageUrls[mbtiTypeString] || "";
+    return MBTIImageUrls[mbtiTypeString] || "PM.png";
   }
 
   //Display image
